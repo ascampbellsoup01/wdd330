@@ -14,23 +14,16 @@ function fetchJSONData() {
 }
 fetchJSONData();
 
-var fbURLv2 = "https://www.thesportsdb.com/api/v2/json/all/leagues";
-var commentdata = "";
-$.ajax({
-    url: fbURLv2,
-    data: "message=" + commentdata,
-    dataType: "json",
-    type: 'POST',
-    beforeSend: function (xhr) {
-        xhr.setRequestHeader('X-API-KEY', 'xxxxxx');
-        xhr.setRequestHeader('Content-Type', 'application/json');
-    },
-    // If success         
-    success: function (resp) {
-        console.log(resp);
-    },
-    // If error
-    error: function (e) {
-        console.log(e);
-    }
-});
+async function renderScores() {
+    const scores = await getLiveScores();
+    const container = document.getElementById("content");
+    container.innerHTML = "<h2>Live Scores</h2>";
+
+    const list = document.createElement("ul");
+    scores.forEach(game => {
+        const item = document.createElement("li");
+        item.textContent = `${game.strEvent} — ${game.intHomeScore} : ${game.intAwayScore}`;
+        list.appendChild(item);
+    });
+    container.appendChild(list);
+}
