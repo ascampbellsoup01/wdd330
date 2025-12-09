@@ -4,17 +4,29 @@ async function renderPredictions() {
     const container = document.getElementById("content");
     container.innerHTML = "<h2>Fantasy Predictions</h2>";
 
-    const scores = await getLiveScores();
-    const list = document.createElement("ul");
+    try {
+        const scores = await getLiveScores();
+        if (!scores.length) {
+            container.innerHTML += "<p>No games available for predictions.</p>";
+            return;
+        }
 
-    scores.forEach(game => {
-        const projection = Math.round(((game.intHomeScore || 0) + (game.intAwayScore || 0)) / 2 * (1 + Math.random()));
-        const item = document.createElement("li");
-        item.textContent = `${game.strEvent} → Projected Fantasy Points: ${projection}`;
-        list.appendChild(item);
-    });
+        const list = document.createElement("ul");
 
-    container.appendChild(list);
+        scores.forEach(game => {
+            const projection = Math.round(
+                (((game.intHomeScore || 0) + (game.intAwayScore || 0)) / 2) * (1 + Math.random())
+            );
+            const item = document.createElement("li");
+            item.textContent = `${game.strEvent} → Projected Fantasy Points: ${projection}`;
+            list.appendChild(item);
+        });
+
+        container.appendChild(list);
+    } catch (err) {
+        container.innerHTML += `<p style="color:red">Error loading predictions: ${err.message}</p>`;
+        console.error("Predictions fetch error:", err);
+    }
 }
 
-renderPredictions();
+document.addEventListener("DOMContentLoaded", renderPredictions);

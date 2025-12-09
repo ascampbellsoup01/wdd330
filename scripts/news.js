@@ -16,8 +16,9 @@ async function renderNews() {
 
         container.appendChild(list);
     } catch (err) {
-        container.innerHTML += `<p style="color:red">Error loading news: ${err.message}</p>`;
+        container.innerHTML += `<p style="color:red">Error: ${err.message}</p>`;
+        console.error(err);
     }
 }
 
-renderNews();
+document.addEventListener("DOMContentLoaded", renderNews);

@@ -28,6 +28,8 @@ async function renderScores() {
     container.appendChild(list);
 }
 
+renderScores();
+
 const SPORTMONKS_BASE_URL = "https://api.sportmonks.com/v3/football/fixtures/17176445?include=participants;league;venue;state;scores;events.type;events.period;events.player;predictions.type";
 const SPORTMONKS_API_KEY = "yP9ZLwDZJJQGTO262lO9bfhgofyYYpqOmNdXR8e477UOc3tIcmKvdEUiTJny";
 

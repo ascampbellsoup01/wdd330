@@ -19,3 +19,11 @@ function showPage(page) {
 }
 
 showPage("home");
+
+export async function getNewsFeed() {
+    const url = `${SPORTMONKS_BASE_URL}/football/news?api_token=${SPORTMONKS_API_KEY}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Sportmonks API error");
+    const data = await res.json();
+    return data.data || [];
+}
