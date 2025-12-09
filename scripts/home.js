@@ -1,6 +1,6 @@
 import { getLiveScores } from "./services.js";
 
-export async function renderHome() {
+async function renderHome() {
     const container = document.getElementById("content");
     container.innerHTML = "<h2>Home</h2>";
 
@@ -19,6 +19,8 @@ export async function renderHome() {
         container.innerHTML += `<p style="color:red">Error loading scores: ${err.message}</p>`;
     }
 }
+
+renderHome();
 
 async function renderScores() {
     const scores = await getLiveScores();

@@ -1,6 +1,6 @@
 import { getLiveScores } from "./services.js";
 
-export async function renderPredictions() {
+async function renderPredictions() {
     const container = document.getElementById("content");
     container.innerHTML = "<h2>Fantasy Predictions</h2>";
 
@@ -16,3 +16,5 @@ export async function renderPredictions() {
 
     container.appendChild(list);
 }
+
+renderPredictions();

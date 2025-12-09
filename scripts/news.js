@@ -1,6 +1,6 @@
 import { getNewsFeed } from "./services.js";
 
-export async function renderNews() {
+async function renderNews() {
     const container = document.getElementById("content");
     container.innerHTML = "<h2>Sports News</h2>";
 
@@ -19,3 +19,5 @@ export async function renderNews() {
         container.innerHTML += `<p style="color:red">Error loading news: ${err.message}</p>`;
     }
 }
+
+renderNews();

@@ -1,4 +1,4 @@
-export function renderPreferences() {
+function renderPreferences() {
     const container = document.getElementById("content");
     container.innerHTML = "<h2>User Preferences</h2>";
 
@@ -22,3 +22,5 @@ export function renderPreferences() {
         container.appendChild(p);
     }
 }
+
+renderPreferences();
