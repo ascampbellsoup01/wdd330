@@ -19,3 +19,21 @@ function showPage(page) {
 }
 
 showPage("home");
+
+const SPORTMONKS_BASE_URL = "https://api.sportmonks.com/v3";
+const SPORTMONKS_API_KEY = "YOUR_SPORTMONKS_KEY";
+
+async function getNewsFeed() {
+    const url = `${SPORTMONKS_BASE_URL}/football/news?api_token=${SPORTMONKS_API_KEY}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Sportmonks API error");
+    const data = await res.json();
+    return data.data || [];
+}
+
+async function getInjuryUpdates() {
+    const url = `${SPORTMONKS_BASE_URL}/football/injuries?api_token=${SPORTMONKS_API_KEY}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    return data.data || [];
+}
