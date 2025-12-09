@@ -28,7 +28,7 @@ export async function getNewsFeed() {
     return data.data || [];
 }
 
-const SPORTMONKS_BASE_URL = "https://api.sportmonks.com/v3/football/fixtures/17176445?include=participants;league;venue;state;scores;events.type;events.period;events.player;predictions.type";
+const SPORTMONKS_BASE_URL = "https://api.sportmonks.com/v3";
 const SPORTMONKS_API_KEY = "yP9ZLwDZJJQGTO262lO9bfhgofyYYpqOmNdXR8e477UOc3tIcmKvdEUiTJny";
 
 async function getNewsFeed() {
@@ -58,3 +58,14 @@ export { getPlayerStats };
 
 getNewsFeed();
 getInjuryUpdates();
+
+const BASE_URL = "https://www.thesportsdb.com/api/v1/json";
+const API_KEY = "123";
+
+export async function getLiveScores(date = "2025-12-08") {
+    const url = `${BASE_URL}/${API_KEY}/eventsday.php?d=${date}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("TheSportsDB API error");
+    const data = await res.json();
+    return data.events || [];
+}
