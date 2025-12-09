@@ -19,34 +19,3 @@ function showPage(page) {
 }
 
 showPage("home");
-
-const SPORTMONKS_BASE_URL = "https://api.sportmonks.com/v3/football/fixtures/17176445?include=participants;league;venue;state;scores;events.type;events.period;events.player;predictions.type";
-const SPORTMONKS_API_KEY = "yP9ZLwDZJJQGTO262lO9bfhgofyYYpqOmNdXR8e477UOc3tIcmKvdEUiTJny";
-
-async function getNewsFeed() {
-    const url = `${SPORTMONKS_BASE_URL}/football/news?api_token=${SPORTMONKS_API_KEY}`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("Sportmonks API error");
-    const data = await res.json();
-    return data.data || [];
-}
-
-async function getInjuryUpdates() {
-    const url = `${SPORTMONKS_BASE_URL}/football/injuries?api_token=${SPORTMONKS_API_KEY}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    return data.data || [];
-}
-
-async function getPlayerStats(playerName) {
-    const url = `${BASE_URL}/${API_KEY}/searchplayers.php?p=${encodeURIComponent(playerName)}`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("API error");
-    const data = await res.json();
-    return data.player || [];
-}
-
-export { getPlayerStats };
-
-getNewsFeed();
-getInjuryUpdates();
