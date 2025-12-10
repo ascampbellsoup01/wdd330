@@ -8,15 +8,80 @@
 </head>
 
 <body>
+    <header class="header">
+        <h1>CONTENDER Sports</h1>
+        <input type="text" placeholder="Search..." class="searchbar">
+        <div class="header-icons">
+            <a href="settings.html">Settings</a>
+        </div>
+    </header>
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="stats.html">Player Stats</a>
-        <a href="predictions.html">Predictions</a>
-        <a href="news.html">News</a>
-        <a href="settings.html">Settings</a>
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="stats">Player Stats</a>
+        <a href="#" data-page="predictions">Predictions</a>
+        <a href="#" data-page="news">News</a>
+        <a href="#" data-page="settings">Settings</a>
     </nav>
-    <h1>Welcome to ContenderSports</h1>
-    <p>Select a module from the navigation above.</p>
+
+    <div class="container">
+        <aside class="sidebar-left">
+            <h2>Scores</h2>
+            <div class="score-tabs">
+                <button>Sport 1</button>
+                <button>Sport 2</button>
+            </div>
+            <ul class="score-list">
+                <li>Team A vs Team B — 00</li>
+                <li>Team 2 vs Team B — 00</li>
+                <li>Match 1 vs Team B — 00</li>
+            </ul>
+            <a href="#">See All</a>
+        </aside>
+
+        <main class="main-content">
+            <section class="news">
+                <h2>Trending News</h2>
+                <div class="news-items">
+                    <div class="news-card">[Image] <p>News Headline</p>
+                    </div>
+                    <div class="news-card">[Image] <p>News Headline</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="predictions">
+                <h2>Fantasy Predictions</h2>
+                <div class="prediction-card">[Image]</div>
+                <ul>
+                    <li>Prediction 1</li>
+                    <li>Prediction 2</li>
+                </ul>
+                <a href="#">See All</a>
+            </section>
+        </main>
+
+        <aside class="sidebar-right">
+            <section class="schedule">
+                <h2>Match Schedule</h2>
+                <div>
+                    <h3>July 31</h3>
+                    <p>Match 1 — Fantasy points</p>
+                    <p>Icon A points — 00</p>
+                </div>
+                <div>
+                    <h3>August 01</h3>
+                    <p>Match 1 — 00</p>
+                    <p>Match 2 — 00</p>
+                </div>
+            </section>
+            <section class="calendar-sync">
+                <h2>Calendar Sync</h2>
+                <button>Sync</button>
+            </section>
+        </aside>
+    </div>
+
     <script type="module" src="scripts/home.js" defer></script>
 </body>
 

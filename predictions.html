@@ -8,8 +8,25 @@
 </head>
 
 <body>
-    <nav><a href="index.html">Back</a></nav>
-    <main id="content"></main>
+    <header class="header">
+        <h1>CONTENDER Sports</h1>
+        <input type="text" placeholder="Search..." class="searchbar">
+        <div class="header-icons">
+            <a href="settings.html">Settings</a>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="index.html">← Back to Home</a>
+    </nav>
+
+    <main class="main-content">
+        <section class="predictions">
+            <h2>Fantasy Predictions</h2>
+            <div id="content" class="prediction-items">
+            </div>
+        </section>
+    </main>
 
     <script type="module" src="scripts/predictions.js" defer></script>
 </body>

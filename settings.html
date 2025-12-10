@@ -8,8 +8,48 @@
 </head>
 
 <body>
-    <nav><a href="index.html">Back</a></nav>
-    <main id="content"></main>
+    <header class="header">
+        <h1>CONTENDER Sports</h1>
+        <input type="text" placeholder="Search..." class="searchbar">
+        <div class="header-icons">
+            <a href="settings.html">Settings</a>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="index.html">Back to Home</a>
+    </nav>
+
+    <main class="main-content">
+        <section class="settings">
+            <h2>User Preferences</h2>
+            <form id="content" class="settings-form">
+                <label>
+                    <span>Theme:</span>
+                    <select name="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Notifications:</span>
+                    <input type="checkbox" name="notifications" checked>
+                </label>
+
+                <label>
+                    <span>Language:</span>
+                    <select name="language">
+                        <option value="en">English</option>
+                        <option value="ko">Korean</option>
+                        <option value="es">Spanish</option>
+                    </select>
+                </label>
+
+                <button type="submit">Save Preferences</button>
+            </form>
+        </section>
+    </main>
 
     <script type="module" src="scripts/preferences.js" defer></script>
 </body>

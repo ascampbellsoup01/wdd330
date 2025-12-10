@@ -8,8 +8,27 @@
 </head>
 
 <body>
-    <nav><a href="index.html">Back</a></nav>
-    <main id="content"></main>
+    <header class="header">
+        <h1>CONTENDER Sports</h1>
+        <input type="text" placeholder="Search..." class="searchbar">
+        <div class="header-icons">
+            <a href="settings.html">Settings</a>
+            <a href="#">🔔</a>
+            <a href="#">👤</a>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="index.html">← Back to Home</a>
+    </nav>
+
+    <main class="main-content">
+        <section class="news">
+            <h2>Trending News</h2>
+            <div id="content" class="news-items">
+            </div>
+        </section>
+    </main>
 
     <script type="module" src="scripts/news.js" defer></script>
 </body>
