@@ -59,8 +59,8 @@ export { getPlayerStats };
 getNewsFeed();
 getInjuryUpdates();
 
-const BASE_URL = "https://www.thesportsdb.com/api/v1/json";
-const API_KEY = "123";
+const BASE_URL = "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Arsenal";
+const API_KEY = "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Arsenal";
 
 export async function getLiveScores(date = "2025-12-08") {
     const url = `${BASE_URL}/${API_KEY}/eventsday.php?d=${date}`;
