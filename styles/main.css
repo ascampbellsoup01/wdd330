@@ -177,11 +177,32 @@ a:hover {
     background-color: #CBC32A;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E6417;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.searchbar {
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+}
+
 .main-nav {
     display: flex;
     justify-content: center;
     gap: 20px;
-    background-color: #1E6417;
+    background-color: #333;
     padding: 12px;
 }
 
