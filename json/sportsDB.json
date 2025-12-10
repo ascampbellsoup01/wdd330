@@ -1,0 +1,10 @@
+{
+    "idEvent": "12345",
+    "strEvent": "Team A vs Team B",
+    "dateEvent": "2025-12-10",
+    "strTime": "19:00",
+    "strVenue": "Stadium X",
+    "strLeague": "NBA",
+    "intHomeScore": "102",
+    "intAwayScore": "98"
+}

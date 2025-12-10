@@ -69,3 +69,15 @@ export async function getLiveScores(date = "2025-12-08") {
     const data = await res.json();
     return data.events || [];
 }
+
+async function loadScores() {
+    const res = await fetch("https://www.thesportsdb.com/api/v1/json/3/eventspastleague.php?id=4328");
+    const data = await res.json();
+    renderScores(data.events);
+}
+
+async function loadNews() {
+    const res = await fetch("https://newsapi.org/v2/everything?q=sports&apiKey=YOUR_KEY");
+    const data = await res.json();
+    renderNews(data.articles);
+}
