@@ -176,3 +176,22 @@ a:hover {
 .settings-form button:hover {
     background-color: #CBC32A;
 }
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1E6417;
+    padding: 12px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #CBC32A;
+}
